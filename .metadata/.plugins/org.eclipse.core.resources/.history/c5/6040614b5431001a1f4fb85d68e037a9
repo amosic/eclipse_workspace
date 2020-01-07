@@ -1,0 +1,9 @@
+
+public class AstucesEtPrecisions {
+	
+	public static void main(String[] args) {
+		//write sysout+(ctrl+space)
+		System.out.println("xxx");
+	}
+
+}

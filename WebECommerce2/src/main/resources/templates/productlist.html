@@ -1,0 +1,20 @@
+<html xmlns:th="https://thymeleaf.org">
+    <head>  
+        <title>Lista Prodotti</title>  
+    </head>  
+	<body>
+		<div th:replace="fragments/header :: header"></div>
+		<h1>Lista Prodotti</h1><br>
+		<span th:text="${msg}"></span>
+		<table>
+   			<th:block th:each="prod : ${products}">
+	      		<tr>
+	         		<td th:text="${prod.nome}"></td>
+	         		<td th:text="${prod.marca.nome}"></td>
+	         		<td th:text="${prod.prezzo}">€</td>
+	         		<td><a th:href="@{'detail/' + ${prod.getId()}}">Dettaglio</a></td>
+	      		</tr>
+   			</th:block>
+		</table> 
+	</body>
+</html>

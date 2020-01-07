@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+
+public class AstucesEtPrecisions {
+	
+	public static void main(String[] args) {
+		//write sysout+(ctrl+space), to write the class System, followed by out, and by method println
+		System.out.println("xxx");
+		//same for "for" cycle (for+ctrl+space) and it writes it for me in different ways
+		//we use the 1st way: for (int i = 0; i < args.length; i++) { }
+		
+		//to import dynamic tables (ArrayList) I write ArrayList+ctrl+space
+		
+ArrayList<Integer> tab= new ArrayList<>();
+tab.add(5);
+
+System.out.println(tab.get(0));
+		
+	
+	}
+
+}

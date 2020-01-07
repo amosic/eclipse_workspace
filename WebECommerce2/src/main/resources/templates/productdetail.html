@@ -1,0 +1,26 @@
+<html>
+	<body>
+		<div th:replace="fragments/header :: header"></div>
+		<h1>Informazioni Prodotto</h1>
+		<table>  
+	        <tr>  
+	            <td>image:</td>  
+	            <td th:text="${prod.imageUrl}"></td>  
+	        </tr>  
+	        <tr>
+	            <td>Nome:</td>  
+	            <td th:text="${prod.nome}"></td>  
+	        </tr>  
+	        <tr>  
+	            <td>Marca:</td>  
+	            <td th:text="${prod.marca.nome}"></td>  
+	        </tr>  
+	        <tr>
+	            <td>Prezzo:</td>  
+	            <td th:text="${prod.prezzo}"></td>  
+	        </tr>  
+	    </table> 
+	    <a th:href="@{'/prodotti/edit/' + ${prod.getId()}}">Modifica</a><br>
+	    <a th:href="@{'/prodotti/remove/' + ${prod.getId()}}">Rimuovi</a>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+
+
+public class giorno {
+public static void main (String[]args) {
+
+int g= 86400
+int o=3600
+int m= 60
+
+System.out.println("quanti secondi sono in 2 giorni?");
+System.out.println (2*g);
+
+}
+}
+			

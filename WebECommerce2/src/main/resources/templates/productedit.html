@@ -1,0 +1,45 @@
+<html>
+    <head>  
+        <title>Modifica prodotto</title>  
+    </head>
+	<body>
+		<div th:replace="fragments/header :: header"></div>
+		
+		<h1>Modifica Prodotto</h1>
+		<form th:action="@{/prodotti/edit/}" th:object="${product}" method="post"> 
+         	<input type="hidden" name="id" th:value="${product.id}"> 
+			<table>  
+                <tr> 
+                    <td>Nome</td>  
+                    <td><input type="text" th:field="*{nome}"></input></td>
+                    <td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>  
+                </tr>  
+		        <tr>  
+		            <td>Marca:</td>  
+		            <td>
+			            <select th:field="*{marca}">
+							<option th:each="b : ${brands}" th:value="${b.id}" th:text="${b.nome}" th:selected="${b.getId() == product.marca.getId()}"></option>
+						</select>
+	                    <td th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"></td>  
+					</td>  
+		        </tr> 
+                <tr>  
+                    <td>Prezzo</td>  
+                    <td><input type="text" th:field="*{prezzo}"></input></td>  
+                    <td th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}"></td>  
+                </tr>  
+                <tr>  
+                    <td>Immagine</td>  
+                    <td><input type="text" th:field="*{imageUrl}"></input></td>  
+                    <td th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}"></td>  
+                </tr>  
+                <tr>  
+                    <td></td>  
+                    <td><input type="submit" value="Submit"></input></td>  
+                </tr>  
+            </table>  
+			
+		<table>  
+	    <a th:href="@{'/prodotti/'}">Lista Prodotti</a><br>
+	</body>
+</html>
